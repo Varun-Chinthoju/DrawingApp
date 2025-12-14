@@ -1,97 +1,47 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# DrawingApp (React Native Procreate‑like App)
 
-# Getting Started
+## Overview
+A premium‑looking drawing application for iOS/Android built with **React Native**. It provides:
+- Freehand drawing with pressure‑sensitive strokes
+- Brush controls (color, size, opacity)
+- Undo / Redo stack
+- Export to PNG
+- Dark‑mode UI with glass‑morphism toolbar
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Prerequisites
+- macOS with Xcode (for iOS) or Android Studio (for Android)
+- Node.js (>=18) and npm (or yarn/pnpm)
+- CocoaPods (`sudo gem install cocoapods`) for iOS
 
-## Step 1: Start Metro
+## Getting Started
+```bash
+# Clone the repository (if not already)
+git clone <YOUR_REPO_URL>
+cd DrawingApp
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+# Install dependencies
+npm install
+# iOS only – install pods
+cd ios && pod install && cd ..
 
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+# Run on iOS simulator
+npx react-native run-ios
+# Or run on Android emulator
+npx react-native run-android
 ```
 
-## Step 2: Build and run your app
+## Development
+- **Canvas** component located at `src/components/Canvas.tsx`
+- **Toolbar** component at `src/components/Toolbar.tsx`
+- Adjust brush settings via the toolbar; undo/redo/export are exposed through a ref.
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+## Building for Production
+```bash
+# iOS
+npx react-native run-ios --configuration Release
+# Android
+npx react-native run-android --variant=release
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## License
+MIT © 2025 Your Name
