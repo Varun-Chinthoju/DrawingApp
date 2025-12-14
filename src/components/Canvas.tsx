@@ -22,7 +22,6 @@ type CanvasProps = {
 const Canvas = forwardRef<CanvasHandle, CanvasProps>((props, ref) => {
   const { color = 'black', strokeWidth = 4, opacity = 1 } = props;
   const [paths, setPaths] = useState<string[]>([]);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_undone, setUndone] = useState<string[]>([]); // renamed to silence unused lint
   const currentPath = useRef<string>('');
   const viewRef = useRef<View>(null);
