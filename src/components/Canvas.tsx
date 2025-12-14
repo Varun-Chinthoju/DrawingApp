@@ -26,6 +26,7 @@ const Canvas = forwardRef<CanvasHandle, CanvasProps>((props, ref) => {
   const currentPath = useRef<string>('');
   const viewRef = useRef<View>(null);
 
+  // Gesture event handler
   const onGestureEvent = (event: { nativeEvent: { x: number; y: number } }) => {
     const { x, y } = event.nativeEvent;
     if (currentPath.current === '') {
@@ -35,6 +36,7 @@ const Canvas = forwardRef<CanvasHandle, CanvasProps>((props, ref) => {
     }
   };
 
+  // State change handler (detect end of gesture)
   const onHandlerStateChange = (event: { nativeEvent: { state: number } }) => {
     if (event.nativeEvent.state === State.END) {
       if (currentPath.current !== '') {
@@ -45,7 +47,7 @@ const Canvas = forwardRef<CanvasHandle, CanvasProps>((props, ref) => {
     }
   };
 
-  // expose methods via ref
+  // Expose methods via ref
   useImperativeHandle(ref, () => ({
     undo: () => {
       setPaths(prev => {
